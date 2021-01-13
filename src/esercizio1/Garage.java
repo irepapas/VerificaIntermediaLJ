@@ -13,12 +13,26 @@ import java.util.ArrayList;
  */
 public class Garage {
 
-    static ArrayList <Veicolo> elencoVeicoli = new ArrayList<Veicolo>();
-  
+    private final ArrayList <Veicolo> elencoVeicoli;
+    private final int posti;
+
+    public Garage(int posti) {
+        elencoVeicoli = new ArrayList<>(posti);
+        this.posti = posti;
+        inizializza();
+    }
+
+    public int getPosti() {
+        return posti;
+    }
+    
+    
     
     public void entra(Veicolo v){
-        
-        elencoVeicoli.add(v);
+        if(postoLibero()==-1){
+            throw new IllegalStateException("Il garage e pieno");
+        }
+        elencoVeicoli.set(postoLibero(),v);
     }
     
  
@@ -32,12 +46,23 @@ public class Garage {
      for (int posto=0; posto<elencoVeicoli.size();posto++){
          if(elencoVeicoli.get(posto) !=null){
             System.out.println("Posto:" + posto);
+            System.out.println();
             System.out.println(elencoVeicoli.get(posto));
-            
+            System.out.println();
         }
         return;
     }
     }    
+
+    private void inizializza() {
+        for(int i=0; i<this.posti; i++){
+            elencoVeicoli.add(null);
+        }
+    }
+
+    private int postoLibero() {
+        return elencoVeicoli.indexOf(null);
+    }
         
        
         
