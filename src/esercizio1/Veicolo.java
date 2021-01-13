@@ -10,7 +10,7 @@ package esercizio1;
  * @author Irene
  */
 public class Veicolo {
-    protected int id; // identifica posto
+    
     protected String marca; // azienda produttrice
     protected int anno; // anno di fabbricazione 
     protected int cyl; // cilindrata
@@ -23,9 +23,7 @@ public class Veicolo {
         
     }
 
-    public int getId() {
-        return id;
-    }
+   
 
     public String getMarca() {
         return marca;
@@ -41,7 +39,7 @@ public class Veicolo {
 
     @Override
      public String toString(){
-        String st = getId() +"\n " + getMarca() +"\n " + getAnno() + "\n " + getCyl() + "\n";
+        String st = getMarca() +"\n " + getAnno() + "\n " + getCyl() + "\n";
         return st;
      }
     

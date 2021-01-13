@@ -27,10 +27,6 @@ public class Auto extends Veicolo{
         return alimentazione;
     }
 
-    @Override
-    public int getId() {
-        return id;
-    }
 
     @Override
     public String getMarca() {
@@ -49,7 +45,7 @@ public class Auto extends Veicolo{
     
     @Override
     public String toString(){
-        String st = getId() +"\n " + getMarca() +"\n " + getAnno() + "\n " + getCyl() + "\n";
+        String st =  getMarca() +"\n " + getAnno() + "\n " + getCyl() + "\n";
         st+= getPorte() + "\n" + getAlimentazione() + "\n";
         return st;
         

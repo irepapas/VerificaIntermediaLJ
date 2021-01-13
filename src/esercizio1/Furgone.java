@@ -21,10 +21,7 @@ public class Furgone extends Veicolo{
         return capacità;
     }
 
-    @Override
-    public int getId() {
-        return id;
-    }
+
 
     @Override
     public String getMarca() {
@@ -43,7 +40,7 @@ public class Furgone extends Veicolo{
     
     @Override
     public String toString(){
-        String st = getId() +"\n " + getMarca() +"\n " + getAnno() + "\n " + getCyl() + "\n";
+        String st = getMarca() +"\n " + getAnno() + "\n " + getCyl() + "\n";
         st+= getCapacità();
         return st;
     }
