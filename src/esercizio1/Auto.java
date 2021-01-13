@@ -10,33 +10,37 @@ package esercizio1;
  * @author Irene
  */
 public class Auto extends Veicolo{
-    // public static enum Alimentazione {Benzina, Diesel};
+    public static enum Alimentazione {Benzina, Diesel};
     private int porte;
-    private String alimentazione;
+   Alimentazione alimentazione;
 
-    public Auto(int porte, String alimentazione, String marca, int anno, int cyl) {
+    public Auto(int porte, Alimentazione alimentazione, String marca, int anno, int cyl) {
         super(marca, anno, cyl);
         this.porte = porte;
         this.alimentazione = alimentazione;
     }
 
+  
    
 
     public int getPorte() {
         return porte;
     }
 
-    public String getAlimentazione() {
+    public Alimentazione getAlimentazione() {
         return alimentazione;
     }
+
 
     public void setPorte(int porte) {
         this.porte = porte;
     }
 
-    public void setAlimentazione(String alimentazione) {
+    public void setAlimentazione(Alimentazione alimentazione) {
         this.alimentazione = alimentazione;
     }
+
+    
 
     
     @Override
