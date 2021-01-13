@@ -25,6 +25,8 @@ public class App {
         
         garage.esci(m1);
         
+        garage.stampaSituazionePosti();
+        
         
         
         

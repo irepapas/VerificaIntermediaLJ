@@ -10,7 +10,6 @@ package esercizio1;
  * @author Irene
  */
 public class Veicolo {
-    
     protected String marca; // azienda produttrice
     protected int anno; // anno di fabbricazione 
     protected int cyl; // cilindrata

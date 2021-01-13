@@ -35,7 +35,12 @@ public class Garage {
         elencoVeicoli.remove(cercaVeicolo(v));
     }
     
-   
+    public void stampaSituazionePosti(){
+     for (Veicolo v:elencoVeicoli){
+            System.out.println(v.toString());
+        }
+        return;
+    }
         
         
        

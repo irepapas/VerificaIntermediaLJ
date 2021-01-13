@@ -12,7 +12,7 @@ package esercizio1;
 public class Auto extends Veicolo{
     public static enum Alimentazione {Benzina, Diesel};
     private int porte;
-   Alimentazione alimentazione;
+    public Alimentazione alimentazione;
 
     public Auto(int porte, Alimentazione alimentazione, String marca, int anno, int cyl) {
         super(marca, anno, cyl);
