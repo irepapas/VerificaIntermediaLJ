@@ -17,8 +17,30 @@ public class Garage {
   
     
     public void entra(Veicolo v){
+        
         elencoVeicoli.add(v);
     }
+    
+    private int cercaVeicolo(Veicolo v){
+        int result = -1;
+        for(int i=0;i<elencoVeicoli.size();i++){
+            if(elencoVeicoli.get(i).equals(v))
+                result = i;}
+        return result;
+        }
+    
+    public void esci(Veicolo v){
+        if (cercaVeicolo(v)==-1)
+            return;
+        elencoVeicoli.remove(cercaVeicolo(v));
+    }
+    
+   
+        
+        
+       
+        
+   
     
    
     
