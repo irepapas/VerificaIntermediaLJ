@@ -46,7 +46,7 @@ public class Veicolo {
     
     @Override
      public String toString(){
-        String st = getMarca() +"\n " + getAnno() + "\n " + getCyl() + "\n";
+        String st = "Marca:" + getMarca() +"\n " + "Anno:"+ getAnno() + "\n " +  "Cilindrata:"+ getCyl() + "\n";
         return st;
      }
     

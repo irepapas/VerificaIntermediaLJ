@@ -25,7 +25,7 @@ public class Furgone extends Veicolo{
     @Override
     public String toString(){
         String st = super.toString();
-        st+= getCapacità();
+        st+=  "Capacità:"+ getCapacità();
         return st;
     }
     

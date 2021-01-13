@@ -37,7 +37,7 @@ public class Auto extends Veicolo{
     @Override
     public String toString(){
         String st =  super.toString();
-        st+= getPorte() + "\n" + getAlimentazione() + "\n";
+        st+=  "Numero porte:" + getPorte() + "\n" + "Alimentazione:"+ getAlimentazione() + "\n";
         return st;
         
     }

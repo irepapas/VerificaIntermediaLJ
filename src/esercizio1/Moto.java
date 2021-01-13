@@ -10,7 +10,7 @@ package esercizio1;
  * @author Irene
  */
 public class Moto extends Veicolo {
-    private int tempi;
+    private int tempi;//migliorabile con enum
 
     public Moto(int tempi, String marca, int anno, int cyl) {
         super(marca, anno, cyl);
@@ -25,7 +25,7 @@ public class Moto extends Veicolo {
     @Override
     public String toString(){
         String st = super.toString();
-        st+= getTempi();
+        st+=  "Tempi:"+ getTempi();
         return st;
     }
     

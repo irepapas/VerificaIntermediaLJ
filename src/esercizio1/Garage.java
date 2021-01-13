@@ -21,20 +21,13 @@ public class Garage {
         elencoVeicoli.add(v);
     }
     
-    private int cercaVeicolo(Veicolo v){
-        int result = -1;
-        for(int i=0;i<elencoVeicoli.size();i++){
-            if(elencoVeicoli.get(i).equals(v))
-                result = i;}
-        return result;
-        }
-    
-    public void esci(Veicolo v){
-        if (cercaVeicolo(v)==-1)
-            return;
-        elencoVeicoli.remove(cercaVeicolo(v));
+ 
+    public Veicolo esci(int posto){
+        Veicolo v= elencoVeicoli.get(posto);
+        elencoVeicoli.set(posto,null);
+        return v;
+        
     }
-    
     public void stampaSituazionePosti(){
      for (Veicolo v:elencoVeicoli){
             System.out.println(v.toString());

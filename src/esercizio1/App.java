@@ -23,7 +23,7 @@ public class App {
         Moto m1 = new Moto(4, "Honda", 2005, 78);
         garage.entra(m1);
         
-        garage.esci(m1);
+        garage.esci(2);
         
         garage.stampaSituazionePosti();
         
