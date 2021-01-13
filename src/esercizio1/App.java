@@ -14,18 +14,48 @@ package esercizio1;
 public class App {
     
     public static void main(String[] args) {
-       try{
-        Garage garage = new Garage(15);
-        garage.entra(new Auto(4, Auto.Alimentazione.BENZINA, "Fiat", 2000, 200));
-        garage.entra(new Furgone(30, "Ducato",1998, 2278));
-        garage.entra(new Moto(2, "Honda", 2005, 78));
-        garage.stampaSituazionePosti();
-       }catch (Exception e){
-           System.out.println(e.getMessage());
-       }
-        
-        
-        
-       
+       try {
+            System.out.println("start esercizio1");
+
+            Garage g = new Garage(1);
+
+            immissioneInGarage(g, new Auto(4, Auto.Alimentazione.BENZINA, "FIAT", 2020, 1000));
+
+            g.stampaSituazionePosti();
+
+            immissioneInGarage(g, new Moto(Moto.Tempi.QUATTROTEMPI, "KTM", 2018, 600));
+
+            g.stampaSituazionePosti();
+
+            Veicolo uscito = uscitaGarage(g, 20);
+
+            System.out.println("E' uscito il veicolo:\n" + uscito);
+
+            g.stampaSituazionePosti();
+
+            immissioneInGarage(g, new Furgone(100, "RENAULT", 2019, 3000));
+
+            g.stampaSituazionePosti();
+
+            System.out.println("fine esercizio1");
+
+        } catch (Exception e) {
+            System.out.println("Oops qualcosa è andato storto...");
+        }
+    }
+    public static void immissioneInGarage(Garage g, Veicolo v) {
+        try {
+            g.entra(v);
+        } catch (GarageException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public static Veicolo uscitaGarage(Garage g, int posto) {
+        try {
+            return g.esci(posto);
+        } catch (GarageException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 }

@@ -10,23 +10,21 @@ package esercizio1;
  * @author Irene
  */
 public class Furgone extends Veicolo{
-    private int capacità;
+    private final int capacita;
 
-    public Furgone(int capacità, String marca, int anno, int cyl) {
+    public Furgone(int capacita, String marca, int anno, int cyl) {
         super(marca, anno, cyl);
-        this.capacità = capacità;
+        this.capacita = capacita;
     }
 
-    public int getCapacità() {
-        return capacità;
+    public int getCapacita() {
+        return capacita;
     }
 
 
     @Override
     public String toString(){
-        String st = super.toString();
-        st+=  "Capacità:"+ getCapacità();
-        return st;
+        return super.toString() + "\n" + "Furgone{" + "capacita=" + capacita + '}';
     }
     
     

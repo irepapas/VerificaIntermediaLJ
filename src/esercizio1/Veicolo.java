@@ -43,11 +43,35 @@ public class Veicolo {
     public int getId() {
         return id;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Veicolo other = (Veicolo) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
+    }
     
     @Override
      public String toString(){
-        String st = "Marca:" + getMarca() +"\n " + "Anno:"+ getAnno() + "\n " +  "Cilindrata:"+ getCyl() + "\n";
-        return st;
+        return "Veicolo{" + "id=" + id + ", marca=" + marca + ", anno=" + anno + ", colindrata=" + cyl + '}';
      }
     
     

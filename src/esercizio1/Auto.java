@@ -10,9 +10,9 @@ package esercizio1;
  * @author Irene
  */
 public class Auto extends Veicolo{
-    public static enum Alimentazione {BENZINA, DIESEL};
+    public static enum Alimentazione {BENZINA, DIESEL}
     private int porte;
-    public Alimentazione alimentazione;
+    private final Alimentazione alimentazione;
 
     public Auto(int porte, Alimentazione alimentazione, String marca, int anno, int cyl) {
         super(marca, anno, cyl);
@@ -36,9 +36,7 @@ public class Auto extends Veicolo{
     
     @Override
     public String toString(){
-        String st =  super.toString();
-        st+=  "Numero porte:" + getPorte() + "\n" + "Alimentazione:"+ getAlimentazione() + "\n";
-        return st;
+      return super.toString() + "\n" + "Auto{" + "porte=" + porte + ", alimentazione=" + alimentazione + '}';
         
     }
     

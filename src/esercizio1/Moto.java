@@ -10,23 +10,22 @@ package esercizio1;
  * @author Irene
  */
 public class Moto extends Veicolo {
-    private int tempi;//migliorabile con enum
+    public static enum Tempi {DUETEMPI,QUATTROTEMPI}
+    private final Tempi tempi;
 
-    public Moto(int tempi, String marca, int anno, int cyl) {
+    public Moto(Tempi tempi, String marca, int anno, int cyl) {
         super(marca, anno, cyl);
         this.tempi = tempi;
     }
 
-    public int getTempi() {
+    public Tempi getTempi() {
         return tempi;
     }
 
 
     @Override
     public String toString(){
-        String st = super.toString();
-        st+=  "Tempi:"+ getTempi();
-        return st;
+        return super.toString() + "\n" + "Moto{" + "tempi=" + tempi + '}';
     }
     
 }
