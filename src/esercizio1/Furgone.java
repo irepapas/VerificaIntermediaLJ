@@ -21,13 +21,10 @@ public class Furgone extends Veicolo{
         return capacità;
     }
 
-    public void setCapacità(int capacità) {
-        this.capacità = capacità;
-    }
 
     @Override
     public String toString(){
-        String st = getMarca() +"\n " + getAnno() + "\n " + getCyl() + "\n";
+        String st = super.toString();
         st+= getCapacità();
         return st;
     }

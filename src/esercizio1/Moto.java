@@ -21,13 +21,10 @@ public class Moto extends Veicolo {
         return tempi;
     }
 
-    public void setTempi(int tempi) {
-        this.tempi = tempi;
-    }
 
     @Override
     public String toString(){
-        String st = getMarca() +"\n " + getAnno() + "\n " + getCyl() + "\n";
+        String st = super.toString();
         st+= getTempi();
         return st;
     }

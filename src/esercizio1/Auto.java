@@ -31,21 +31,12 @@ public class Auto extends Veicolo{
         return alimentazione;
     }
 
-
-    public void setPorte(int porte) {
-        this.porte = porte;
-    }
-
-    public void setAlimentazione(Alimentazione alimentazione) {
-        this.alimentazione = alimentazione;
-    }
-
     
 
     
     @Override
     public String toString(){
-        String st =  getMarca() +"\n " + getAnno() + "\n " + getCyl() + "\n";
+        String st =  super.toString();
         st+= getPorte() + "\n" + getAlimentazione() + "\n";
         return st;
         

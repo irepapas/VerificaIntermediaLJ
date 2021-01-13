@@ -10,11 +10,15 @@ package esercizio1;
  * @author Irene
  */
 public class Veicolo {
-    protected String marca; // azienda produttrice
-    protected int anno; // anno di fabbricazione 
-    protected int cyl; // cilindrata
+    
+    private static int counter;
+    private final int id;
+    private final String marca; // azienda produttrice
+    private final int anno; // anno di fabbricazione 
+    private final int cyl; // cilindrata
 
     public Veicolo(String marca, int anno, int cyl) {
+        this.id=++counter;
         this.marca = marca;
         this.anno = anno;
         this.cyl = cyl;
@@ -36,16 +40,8 @@ public class Veicolo {
         return cyl;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public void setAnno(int anno) {
-        this.anno = anno;
-    }
-
-    public void setCyl(int cyl) {
-        this.cyl = cyl;
+    public int getId() {
+        return id;
     }
     
     @Override
