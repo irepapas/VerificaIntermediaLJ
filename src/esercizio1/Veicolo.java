@@ -37,6 +37,18 @@ public class Veicolo {
         return cyl;
     }
 
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setAnno(int anno) {
+        this.anno = anno;
+    }
+
+    public void setCyl(int cyl) {
+        this.cyl = cyl;
+    }
+    
     @Override
      public String toString(){
         String st = getMarca() +"\n " + getAnno() + "\n " + getCyl() + "\n";

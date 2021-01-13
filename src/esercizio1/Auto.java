@@ -42,6 +42,29 @@ public class Auto extends Veicolo{
     public int getCyl() {
         return cyl;
     }
+
+    public void setPorte(int porte) {
+        this.porte = porte;
+    }
+
+    public void setAlimentazione(char alimentazione) {
+        this.alimentazione = alimentazione;
+    }
+
+    @Override
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    @Override
+    public void setAnno(int anno) {
+        this.anno = anno;
+    }
+
+    @Override
+    public void setCyl(int cyl) {
+        this.cyl = cyl;
+    }
     
     @Override
     public String toString(){

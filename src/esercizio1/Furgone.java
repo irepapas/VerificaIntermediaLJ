@@ -37,6 +37,25 @@ public class Furgone extends Veicolo{
     public int getCyl() {
         return cyl;
     }
+
+    public void setCapacità(int capacità) {
+        this.capacità = capacità;
+    }
+
+    @Override
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    @Override
+    public void setAnno(int anno) {
+        this.anno = anno;
+    }
+
+    @Override
+    public void setCyl(int cyl) {
+        this.cyl = cyl;
+    }
     
     @Override
     public String toString(){
