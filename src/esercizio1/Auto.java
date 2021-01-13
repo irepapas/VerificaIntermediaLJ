@@ -10,61 +10,34 @@ package esercizio1;
  * @author Irene
  */
 public class Auto extends Veicolo{
+    public static enum Alimentazione {Benzina, Diesel};
     private int porte;
-    private char alimentazione;
+    private String alimentazione;
 
-    public Auto(int porte, char alimentazione, String marca, int anno, int cyl) {
+    public Auto(int porte, String alimentazione, String marca, int anno, int cyl) {
         super(marca, anno, cyl);
         this.porte = porte;
         this.alimentazione = alimentazione;
     }
 
+   
+
     public int getPorte() {
         return porte;
     }
 
-    public char getAlimentazione() {
+    public String getAlimentazione() {
         return alimentazione;
-    }
-
-
-    @Override
-    public String getMarca() {
-        return marca;
-    }
-
-    @Override
-    public int getAnno() {
-        return anno;
-    }
-
-    @Override
-    public int getCyl() {
-        return cyl;
     }
 
     public void setPorte(int porte) {
         this.porte = porte;
     }
 
-    public void setAlimentazione(char alimentazione) {
+    public void setAlimentazione(String alimentazione) {
         this.alimentazione = alimentazione;
     }
 
-    @Override
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    @Override
-    public void setAnno(int anno) {
-        this.anno = anno;
-    }
-
-    @Override
-    public void setCyl(int cyl) {
-        this.cyl = cyl;
-    }
     
     @Override
     public String toString(){
