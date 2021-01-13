@@ -10,7 +10,7 @@ package esercizio1;
  * @author Irene
  */
 public class Auto extends Veicolo{
-    public static enum Alimentazione {Benzina, Diesel};
+    public static enum Alimentazione {BENZINA, DIESEL};
     private int porte;
     public Alimentazione alimentazione;
 

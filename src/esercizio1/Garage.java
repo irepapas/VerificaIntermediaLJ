@@ -29,12 +29,15 @@ public class Garage {
         
     }
     public void stampaSituazionePosti(){
-     for (Veicolo v:elencoVeicoli){
-            System.out.println(v.toString());
+     for (int posto=0; posto<elencoVeicoli.size();posto++){
+         if(elencoVeicoli.get(posto) !=null){
+            System.out.println("Posto:" + posto);
+            System.out.println(elencoVeicoli.get(posto));
+            
         }
         return;
     }
-        
+    }    
         
        
         
