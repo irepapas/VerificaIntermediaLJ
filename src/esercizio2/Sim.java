@@ -33,11 +33,8 @@ public class Sim {
     }
 
 
-    public void inserisciChiamata(String numero, int durataMinuti, int costoMinuto) {
-        Chiamata c1 = new Chiamata(durataMinuti, numero, costoMinuto);
-        listaChiamate.add(c1);
-        credito -= (double) durataMinuti * costoMinuto;
-        listaChiamate.listIterator();
+    public void chiamata(int durataMinuti, String destinatario){
+        this.listaChiamate.add(new Chiamata(durataMinuti, destinatario));
     }
 
     public int calcoloMinutiTot() {
@@ -51,7 +48,7 @@ public class Sim {
     public String chimateToSomeone() {
         String someone = "";
         for (int i = 0; i < listaChiamate.size(); i++) {
-            someone = listaChiamate.get(i).getNumero();
+            someone = listaChiamate.get(i).getDestinatario();
         }
         return someone;
     }
@@ -60,7 +57,7 @@ public class Sim {
     public String toString() {
         String st = "numero:" + getNumero() + " credito:" + getCredito() + "\n";
         for (int i = 0; i < listaChiamate.size(); i++) {
-            st += listaChiamate.get(i).getNumero() + " " + listaChiamate.get(i).getDurataMinuti() + "\n";
+            st += listaChiamate.get(i).getDestinatario()+ " " + listaChiamate.get(i).getDurataMinuti() + "\n";
         }
         return st;
     }
