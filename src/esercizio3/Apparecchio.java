@@ -15,9 +15,9 @@ public class Apparecchio {
     private int tot;//totale costo riparazione
     private String marca;
 
-    public Apparecchio(int id, int tot, String marca) {
+    public Apparecchio(int id, String marca) {
         this.id = id;
-        this.tot = tot;
+        this.tot = 0;
         this.marca = marca;
     }
 

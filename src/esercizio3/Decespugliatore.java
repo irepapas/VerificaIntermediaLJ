@@ -13,8 +13,8 @@ public class Decespugliatore extends Apparecchio {
 
     private boolean accElettrica;
 
-    public Decespugliatore(boolean accElettrica, int id, int tot, String marca) {
-        super(id, tot, marca);
+    public Decespugliatore(boolean accElettrica, int id,String marca) {
+        super(id,marca);
         this.accElettrica = accElettrica;
     }
 
