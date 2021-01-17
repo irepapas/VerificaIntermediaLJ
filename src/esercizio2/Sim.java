@@ -15,32 +15,23 @@ import java.util.List;
 public class Sim {
 
     private final String numero;
-    private int chiamataEffettuata;
     private double credito;
     private final List<Chiamata> listaChiamate;
 
-    public Sim(String numero, int chiamataEffettuata, double credito) {
+    public Sim(String numero,double credito) {
         this.numero = numero;
-        this.chiamataEffettuata = chiamataEffettuata;
         this.credito = credito;
-        listaChiamate = new ArrayList<>(chiamataEffettuata);
+        this.listaChiamate = new ArrayList<>();
     }
 
     public String getNumero() {
         return numero;
     }
 
-    public int getChiamataEffettuata() {
-        return chiamataEffettuata;
-    }
-
     public double getCredito() {
         return credito;
     }
 
-    public List<Chiamata> getListaChiamate() {
-        return listaChiamate;
-    }
 
     public void inserisciChiamata(String numero, int durataMinuti, int costoMinuto) {
         Chiamata c1 = new Chiamata(durataMinuti, numero, costoMinuto);

@@ -11,31 +11,29 @@ package esercizio2;
  */
 public class Chiamata {
     
-    private int durataMinuti;
-    private final String numero;
-    private double costoMinuto;
+    private final int durataMinuti;
+    private final String destinatario;
 
-    public Chiamata(int durataMinuti, String numero, double costoMinuto) {
+    public Chiamata(int durataMinuti, String destinatario) {
         this.durataMinuti = durataMinuti;
-        this.numero = numero;
-        this.costoMinuto = costoMinuto;
+        this.destinatario = destinatario;
     }
-    
-    
 
+    public String getDestinatario() {
+        return destinatario;
+    }
+   
     
     public int getDurataMinuti() {
         return durataMinuti;
     }
 
-    public double getCostoMinuto() {
-        return costoMinuto;
-    }
-    
+    @Override
+   public String toString(){
+       String s ="";
+       return s = "Destinatario:"+ destinatario + "\n" + "Durata:"+ durataMinuti;
+   }
 
-    public String getNumero() {
-        return numero;
-    }
     
     
     
