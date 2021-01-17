@@ -5,6 +5,9 @@
  */
 package esercizio3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Irene
@@ -14,16 +17,13 @@ public class Apparecchio {
     private final int id;
     private int tot;//totale costo riparazione
     private String marca;
-    private Riparazione[] elencoRiparazioni;
+    private List<Riparazione>elencoRiparazioni;
 
     public Apparecchio(int id, String marca) {
         this.id = id;
         this.tot = 0;
         this.marca = marca;
-        elencoRiparazioni = new Riparazione[10];
-        for (int i = 0; i < elencoRiparazioni.length; i++) {
-            elencoRiparazioni[i] = new Riparazione("", 0);
-        }
+        this.elencoRiparazioni=new ArrayList<>();
     }
 
     public int getId() {
@@ -37,27 +37,37 @@ public class Apparecchio {
     public String getMarca() {
         return marca;
     }
+    
+    public void AggiungiRiparazione(String rip, double prz){
+        this.elencoRiparazioni.add(new Riparazione(rip, prz));
+        this.tot+=prz;
+    }
 
     @Override
-    public String toString() {
-        String s = "id:" + id + " marca:" + marca + " tot:" + tot;
-        if(elencoRiparazioni[0].getprz()!=0)
-        for(int j=0;j < elencoRiparazioni.length;j++){
-            if(elencoRiparazioni[j].getprz()!=0)
-                s+=elencoRiparazioni[j];
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return s;
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Apparecchio other = (Apparecchio) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
     }
     
-    //incremento il totale del costo della riparazione
-    public void setlista(String ripara, int prez) {
-        for (int j = 0; j < elencoRiparazioni.length; j++) {
-            if (elencoRiparazioni[j].getprz() == 0) {
-                elencoRiparazioni[j] = new Riparazione(ripara, prez);
-                tot += prez;
-                break;
-            }
-        }
-        
-    }
+    
+    
     }

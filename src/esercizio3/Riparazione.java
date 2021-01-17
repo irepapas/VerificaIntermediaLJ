@@ -12,16 +12,16 @@ package esercizio3;
 public class Riparazione {
 
     String rip;
-    int prz;
+    double prz;
 
-    public Riparazione(String rip, int prz) {
+    public Riparazione(String rip, double prz) {
         this.rip = rip;
         this.prz = prz;
     }
 
    
 
-    public int getprz() {
+    public double getprz() {
         return prz;
     }
 
