@@ -9,13 +9,9 @@ package esercizio3;
  *
  * @author Irene
  */
-public class App {
-    public static void main(String[] args) {
-        
-        
-        
-       
-        
-    }
- 
+public class Aggiusteria {
+    
+    Apparecchio[] a1 = new Apparecchio[10];
+    
+    
 }
