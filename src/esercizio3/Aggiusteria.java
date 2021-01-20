@@ -43,7 +43,7 @@ public class Aggiusteria {
             if (riparazioniInCorso()== -1) {
                 throw new AggiusteriaException("Raggiunto limite lavorazioni");
             }
-            eleApparecchi.get(id_ordine).AggiungiRiparazione("", id_ordine);
+            eleApparecchi.get(id_ordine).AggiungiRiparazione("", 0);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
