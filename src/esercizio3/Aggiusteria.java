@@ -62,12 +62,12 @@ public class Aggiusteria {
         lavorazioni.set(lavorazioni.indexOf(eleApparecchi.get(id_ordine)), null);
             
     }
-     public Apparecchio elimina(int id) {
-        if (id >= this.id_ordine|| eleApparecchi.get(id) == null) {
+     public Apparecchio elimina(int id_ordine) {
+        if (id_ordine >= this.id_ordine|| eleApparecchi.get(id_ordine) == null) {
             throw new AggiusteriaException("L'id non esiste oppure è vuoto");
         }
-        Apparecchio a = eleApparecchi.get(id);
-        eleApparecchi.set(id, null);
+        Apparecchio a = eleApparecchi.get(id_ordine);
+        eleApparecchi.set(id_ordine, null);
         return a;
     }
       
