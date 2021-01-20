@@ -14,60 +14,46 @@ import java.util.List;
  */
 public class Apparecchio {
 
-    private final int id;
-    private int tot;//totale costo riparazione
+    private int id_ordine;
     private String marca;
-    private List<Riparazione>elencoRiparazioni;
+    private double totRiparazioni;
+    private List <Riparazione> elencoRiparazioni;
 
-    public Apparecchio(int id, String marca) {
-        this.id = id;
-        this.tot = 0;
+    public Apparecchio(String marca) {
         this.marca = marca;
-        this.elencoRiparazioni=new ArrayList<>();
+        this.elencoRiparazioni= new ArrayList<>();
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public int getTot() {
-        return tot;
+    public  int getId_ordine() {
+        return id_ordine;
     }
 
     public String getMarca() {
         return marca;
     }
-    
-    public void AggiungiRiparazione(String rip, double prz){
-        this.elencoRiparazioni.add(new Riparazione(rip, prz));
-        this.tot+=prz;
+
+    public double getTotRiparazioni() {
+        return totRiparazioni;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + this.id;
-        return hash;
+    public List<Riparazione> getElencoRiparazioni() {
+        return elencoRiparazioni;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Apparecchio other = (Apparecchio) obj;
-        if (this.id != other.id) {
-            return false;
-        }
-        return true;
+    public void setId_ordine(int id_ordine) {
+        this.id_ordine = id_ordine;
+    }
+
+    
+    public Riparazione AggiungiRiparazione(String tipoRiparazione, double prezzo){
+        Riparazione x = new Riparazione(tipoRiparazione, prezzo, marca);
+        this.elencoRiparazioni.add(x);
+        this.totRiparazioni+=prezzo;
+        return x;
     }
     
+ 
+   
     
     
     }

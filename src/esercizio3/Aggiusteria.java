@@ -14,55 +14,75 @@ import java.util.List;
  */
 public class Aggiusteria {
     
-  private final List <Apparecchio> elencoApparecchi;
-  private int id =0;
+ public static ArrayList<Apparecchio> lavorazioni = new ArrayList<>();
+ public List <Apparecchio> eleApparecchi;
+ private final int id_ordine;
 
     public Aggiusteria(int id) {
-        this.id = id;
-        elencoApparecchi= new ArrayList<>(id);
+        this.id_ordine=id;
+        this.eleApparecchi = new ArrayList<>();
         inizializza();
     }
 
-    public int getId() {
-        return id;
-    }
-     public void inserisci(Apparecchio a) {
-        if (riparazioniInCorso() == -1) {
-            throw new AggiusteriaException("Lavoro pieno...");
-        }
-        elencoApparecchi.set(riparazioniInCorso(), a);
-    }
-    
-     public Apparecchio elimina(int id) {
-        if (id >= this.id || elencoApparecchi.get(id) == null) {
-            throw new AggiusteriaException("L'id non esiste oppure è vuoto");
-        }
-        Apparecchio a = elencoApparecchi.get(id);
-        elencoApparecchi.set(id, null);
-        return a;
+    public int getId_ordine() {
+        return id_ordine;
     }
      
-     public void stampaSituazione() {
-        for (int id = 0; id < elencoApparecchi.size(); id++) {
-            if (elencoApparecchi.get(id) != null) {
-                System.out.println("--------------- ID " + id + "------------------");
-                System.out.println(elencoApparecchi.get(id));
-                System.out.println("---------------------------------");
-                System.out.println();
-            }
+ 
 
+
+     public void inserisci(Apparecchio a, int id) {
+        if ( riparazioniInCorso()== -1) {
+            throw new AggiusteriaException("Aggiusteria pieno...");
         }
+        eleApparecchi.set(riparazioniInCorso(), a);
+        a.setId_ordine(id++);
     }
+    public void inserisciLavorazione(int id_ordine,Riparazione r) {
+        try {
+            if (riparazioniInCorso()== -1) {
+                throw new AggiusteriaException("Raggiunto limite lavorazioni");
+            }
+            eleApparecchi.get(id_ordine).AggiungiRiparazione("", id_ordine);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
+    }
+     public void riparazioneStampa(Apparecchio a){
+        System.out.println("Riparazione effettuata per: "+a.getMarca()+"\ncon id ordine: "+ a.getId_ordine());
+        System.out.println("Sono state effettuate le seguenti riparazioni: ");
+        for (Riparazione r: a.getElencoRiparazioni()) {
+            System.out.println(r.toString());
+            System.out.println("-----------------------");
+        }
+        System.out.println("Il costo totale delle riparazioni è: "+a.getTotRiparazioni());
+        
+        lavorazioni.set(lavorazioni.indexOf(a), null);
+            
+    }
+     public Apparecchio elimina(int id) {
+        if (id >= this.id_ordine|| eleApparecchi.get(id) == null) {
+            throw new AggiusteriaException("L'id non esiste oppure è vuoto");
+        }
+        Apparecchio a = eleApparecchi.get(id);
+        eleApparecchi.set(id, null);
+        return a;
+    }
+      
+    
+     
+     
+   
   
     private void inizializza() {
-        for(int i=0; i<this.id; i++){
-           elencoApparecchi.add(null);
+        for(int i=0; i<this.id_ordine; i++){
+           eleApparecchi.add(null);
         }
     }
     
-    private int riparazioniInCorso() {
-        return elencoApparecchi.indexOf(null);
+    public int riparazioniInCorso() {
+        return lavorazioni.indexOf(null);
     }
     
     

@@ -13,10 +13,12 @@ public class Tosaerba extends Apparecchio {
 
       private int nruote;
 
-    public Tosaerba(int nruote, int id,String marca) {
-        super(id,marca);
+    public Tosaerba(int nruote, String marca) {
+        super(marca);
         this.nruote = nruote;
     }
+
+     
 
     public int getNruote() {
         return nruote;

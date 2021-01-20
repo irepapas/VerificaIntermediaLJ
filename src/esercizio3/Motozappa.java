@@ -13,10 +13,12 @@ public class Motozappa extends Apparecchio {
 
     private int nruote;
 
-    public Motozappa(int nruote, int id,String marca) {
-        super(id,marca);
+    public Motozappa(int nruote, String marca) {
+        super(marca);
         this.nruote = nruote;
     }
+
+   
 
     public int getNruote() {
         return nruote;

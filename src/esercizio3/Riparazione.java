@@ -9,25 +9,36 @@ package esercizio3;
  *
  * @author Irene
  */
-public class Riparazione {
+public class Riparazione extends Apparecchio{
 
-    String rip;
-    double prz;
+   private  String tipoRiparazione;
+   private double prezzo;
 
-    public Riparazione(String rip, double prz) {
-        this.rip = rip;
-        this.prz = prz;
+    public Riparazione(String tipoRiparazione, double prezzo, String marca) {
+        super(marca);
+        this.tipoRiparazione = tipoRiparazione;
+        this.prezzo = prezzo;
     }
 
    
 
-    public double getprz() {
-        return prz;
+    public String getTipoRiparazione() {
+        return tipoRiparazione;
     }
+
+    public double getPrezzo() {
+        return prezzo;
+    }
+
+   
+
+  
+
+    
 
     @Override
     public String toString() {
-        String s = "\tvoce:" + rip + " costo:" + prz + "\n";
+        String s = "\tvoce:" + tipoRiparazione + " costo:" + prezzo+ "\n";
         return s;
     }
 }
