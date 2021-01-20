@@ -49,16 +49,17 @@ public class Aggiusteria {
         }
 
     }
-     public void riparazioneStampa(Apparecchio a){
-        System.out.println("Riparazione effettuata per: "+a.getMarca()+"\ncon id ordine: "+ a.getId_ordine());
+     public void riparazioneStampa(int id_ordine){
+        
+        System.out.println("Riparazione effettuata per ordine n:" + eleApparecchi.get(id_ordine).getMarca());
         System.out.println("Sono state effettuate le seguenti riparazioni: ");
-        for (Riparazione r: a.getElencoRiparazioni()) {
+        for (Riparazione r: eleApparecchi.get(id_ordine).getElencoRiparazioni()) {
             System.out.println(r.toString());
             System.out.println("-----------------------");
         }
-        System.out.println("Il costo totale delle riparazioni è: "+a.getTotRiparazioni());
+        System.out.println("Il costo totale delle riparazioni è: "+eleApparecchi.get(id_ordine).getTotRiparazioni());
         
-        lavorazioni.set(lavorazioni.indexOf(a), null);
+        lavorazioni.set(lavorazioni.indexOf(eleApparecchi.get(id_ordine)), null);
             
     }
      public Apparecchio elimina(int id) {

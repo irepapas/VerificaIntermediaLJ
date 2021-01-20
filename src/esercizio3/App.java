@@ -21,10 +21,9 @@ public class App {
          e.inserisci(new Decespugliatore(true, "Ehinell") , 0);
          
          e.inserisciLavorazione(0, new Riparazione("Cambio ruote", 45, "Alko"));
-         e.riparazioneStampa(a);
+         e.riparazioneStampa(0);
          
-         
-         
+        
        
 
         
